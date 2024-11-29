@@ -1,0 +1,2 @@
+MARGIN = 10
+CELL_SIZE = 100
