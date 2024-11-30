@@ -37,3 +37,13 @@ class Cell:
 			point2 = Point(self._x2, self._y2)
 			line4 = Line(point1, point2)
 			self._win.draw_line(line4, "black")
+
+	def draw_move(self, dest_cell, undo=False):
+		src_midX = self._x1 + (self._x2 - self._x1) / 2
+		src_midY = self._y1 + (self._y2 - self._y1) / 2
+		dest_midX = dest_cell._x1 + (dest_cell._x2 - dest_cell._x1) / 2
+		dest_midY = dest_cell._y1 + (dest_cell._y2 - dest_cell._y1) / 2
+		point1 = Point(src_midX, src_midY)
+		point2 = Point(dest_midX, dest_midY)
+		line = Line(point1, point2)
+		self._win.draw_line(line, "red")

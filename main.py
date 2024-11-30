@@ -33,7 +33,8 @@ def main():
 
 	cell1.draw()
 	cell2.draw()
-	
+	cell1.draw_move(cell2)
+
 	win.wait_for_close()
 
 main()
