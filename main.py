@@ -2,15 +2,16 @@ from window import Window
 from graphics import Point, Line
 from cell import Cell
 from constants import *
+from maze import Maze
 
 def main():
-	win = Window(800, 600)
+	win = Window(WIN_WIDTH, WIN_HEIGHT)
 
 	cell1 = Cell(
-		MARGIN, 
-		MARGIN, 
-		MARGIN + CELL_SIZE, 
-		MARGIN + CELL_SIZE, 
+		MARGIN_LR, 
+		MARGIN_TB, 
+		MARGIN_LR + CELL_SIZE, 
+		MARGIN_TB + CELL_SIZE, 
 		win
 	)
 	cell1.has_left_wall = False
@@ -23,17 +24,19 @@ def main():
 	# for top left and bottom right coords:
 	# tl-x = tl-y = centerpos - cellsize / 2
 	cell2 = Cell(
-		MARGIN + CELL_SIZE, 
-		MARGIN, 
-		MARGIN + 2 * CELL_SIZE, 
-		MARGIN + CELL_SIZE, 
+		MARGIN_LR + CELL_SIZE, 
+		MARGIN_TB, 
+		MARGIN_LR + 2 * CELL_SIZE, 
+		MARGIN_TB + CELL_SIZE, 
 		win
 	)
 	cell2.has_left_wall = False
 
-	cell1.draw()
-	cell2.draw()
-	cell1.draw_move(cell2)
+	maze = Maze(MARGIN_LR, MARGIN_TB, NUM_ROWS, NUM_COLS, CELL_SIZE, CELL_SIZE, win)
+
+	#cell1.draw()
+	#cell2.draw()
+	#cell1.draw_move(cell2)
 
 	win.wait_for_close()
 
