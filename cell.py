@@ -13,45 +13,47 @@ class Cell:
 		self._y1 = y1
 		self._y2 = y2
 		self._win = win
+		self.visited = False
 
 	def draw(self):
 		
 		point1 = Point(self._x1, self._y1)
 		point2 = Point(self._x1, self._y2)
-		line = Line(point1, point2)
+		line1 = Line(point1, point2)
 		
 		if self.has_left_wall:
-			self._win.draw_line(line, "black")
+			self._win.draw_line(line1, "black")
 		else:
-			self._win.draw_line(line, "gray75")
+			self._win.draw_line(line1, "gray75")
 
 		point1 = Point(self._x2, self._y1)
 		point2 = Point(self._x2, self._y2)
-		line = Line(point1, point2)		
+		line2 = Line(point1, point2)		
 		
 		if self.has_right_wall:
-			self._win.draw_line(line, "black")
+			self._win.draw_line(line2, "black")
 		else:
-			self._win.draw_line(line, "gray75")
+			self._win.draw_line(line2, "gray75")
 		
 		point1 = Point(self._x1, self._y1)
 		point2 = Point(self._x2, self._y1)
-		line = Line(point1, point2)
+		line3 = Line(point1, point2)
 		
 		if self.has_top_wall:
-			self._win.draw_line(line, "black")
+			self._win.draw_line(line3, "black")
 		else:
-			self._win.draw_line(line, "gray75")
+			self._win.draw_line(line3, "gray75")
 		
 		point1 = Point(self._x1, self._y2)
 		point2 = Point(self._x2, self._y2)
-		line = Line(point1, point2)
+		line4 = Line(point1, point2)
 		
 		if self.has_bottom_wall:
-			self._win.draw_line(line, "black")
+			self._win.draw_line(line4, "black")
 		else:
-			self._win.draw_line(line, "gray75")
-
+			self._win.draw_line(line4, "gray75")
+		
+		
 	def draw_move(self, dest_cell, undo=False):
 		src_midX = self._x1 + (self._x2 - self._x1) / 2
 		src_midY = self._y1 + (self._y2 - self._y1) / 2
