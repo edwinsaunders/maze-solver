@@ -1,6 +1,6 @@
-#margin is determined by num cells and cell size:
-#margin_tb = (win_height - cellsize * numrows) / 2
-#margin_lr = (win_width - cellsize * numcols) / 2
+# margin is determined by num cells and cell size:
+# margin_tb = (win_height - cellsize * numrows) / 2
+# margin_lr = (win_width - cellsize * numcols) / 2
 
 CELL_SIZE = 20
 NUM_ROWS = 20
