@@ -8,7 +8,7 @@ from maze import Maze
 
 def main():
     win = Window(WIN_WIDTH, WIN_HEIGHT)  # noqa: F405
-
+    '''
     cell1 = Cell(
         MARGIN_LR,  # noqa: F405
         MARGIN_TB,  # noqa: F405
@@ -33,16 +33,14 @@ def main():
         win
     )
     cell2.has_left_wall = False
-
+    '''
     maze = Maze(  # noqa: 841
         MARGIN_LR, MARGIN_TB, NUM_ROWS, NUM_COLS, CELL_SIZE,  # noqa: F405
         CELL_SIZE,  # noqa: F405
         win
     )
 
-    # cell1.draw()
-    # cell2.draw()
-    # cell1.draw_move(cell2)
+    maze.solve()
 
     win.wait_for_close()
 

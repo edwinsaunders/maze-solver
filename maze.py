@@ -37,7 +37,6 @@ class Maze:
         self._break_entrance_and_exit()
         self._break_walls_r(0, 0)
         self._reset_cells_visited()
-        self._solve_r(0, 0)
 
     def _create_cells(self):
         for i in range(self.num_rows):
@@ -197,3 +196,6 @@ class Maze:
                     current_cell.draw_move(cell_left, undo=True)
 
             return False
+
+    def solve(self):
+        return self._solve_r(0, 0)
